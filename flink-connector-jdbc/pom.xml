@@ -55,7 +55,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-base</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -65,7 +65,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-api-java-bridge</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
@@ -129,14 +129,14 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-test-utils</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-common</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<type>test-jar</type>
 			<scope>test</scope>
 		</dependency>
@@ -144,7 +144,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-java</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<type>test-jar</type>
 			<scope>test</scope>
 		</dependency>
@@ -152,7 +152,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-core</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 			<type>test-jar</type>
 		</dependency>
@@ -160,14 +160,14 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-planner_${scala.binary.version}</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-planner_${scala.binary.version}</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<type>test-jar</type>
 			<scope>test</scope>
 		</dependency>
@@ -175,14 +175,14 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table-api-scala-bridge_${scala.binary.version}</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-base</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 			<type>test-jar</type>
 		</dependency>
@@ -190,7 +190,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-test-utils</artifactId>
-			<version>${flink.version}</version>
+			<version>1.18.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -230,7 +230,13 @@ under the License.
 			<version>10.14.2.0</version>
 			<scope>test</scope>
 		</dependency>
-
+        <!-- snowflake -->
+		<dependency>
+			<groupId>net.snowflake</groupId>
+			<artifactId>snowflake-jdbc</artifactId>
+			<version>3.13.6</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- Oracle tests -->
 		<dependency>
 			<groupId>org.testcontainers</groupId>

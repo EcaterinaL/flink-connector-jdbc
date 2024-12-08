@@ -70,7 +70,16 @@ under the License.
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>net.snowflake</groupId>
+            <artifactId>snowflake-jdbc</artifactId>
+            <version>3.13.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-core</artifactId>
+            <version>1.15.0</version>
+        </dependency>
         <!-- Root dependencies for all projects -->
 
         <dependency>

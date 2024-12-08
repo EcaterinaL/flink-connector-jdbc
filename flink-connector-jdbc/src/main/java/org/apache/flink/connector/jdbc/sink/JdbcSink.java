@@ -17,6 +17,7 @@
 
 package org.apache.flink.connector.jdbc.sink;
 
+import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import org.apache.flink.annotation.Internal;
 import org.apache.flink.annotation.PublicEvolving;
 import org.apache.flink.api.connector.sink2.Committer;
@@ -78,7 +79,26 @@ public class JdbcSink<IN>
         return restoreWriter(context, Collections.emptyList());
     }
 
-    @Override
+@Override
+@Internal
+public JdbcWriter<IN> restoreWriter(
+        InitContext context, Collection<JdbcWriterState> recoveredState) throws IOException {
+    // Use the correct TypeSerializer from Flink API
+    org.apache.flink.api.common.typeutils.TypeSerializer<IN> typeSerializer = context.getTypeSerializer();
+    boolean isObjectReuseEnabled = context.isObjectReuseEnabled();
+
+    JdbcOutputSerializer<IN> outputSerializer = new JdbcOutputSerializer<>(typeSerializer, isObjectReuseEnabled);
+    return new JdbcWriter<>(
+            this.connectionProvider,
+            this.executionOptions,
+            this.exactlyOnceOptions,
+            this.queryStatement,
+            outputSerializer,
+            deliveryGuarantee,
+            recoveredState,
+            context);
+}
+/*@Override
     @Internal
     public JdbcWriter<IN> restoreWriter(
             InitContext context, Collection<JdbcWriterState> recoveredState) throws IOException {
@@ -94,7 +114,7 @@ public class JdbcSink<IN>
                 deliveryGuarantee,
                 recoveredState,
                 context);
-    }
+    }*/
 
     @Override
     @Internal
